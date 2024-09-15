@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen aleatoria</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="randomImage" alt="Imagen aleatoria">
+
+    <script>
+        // URLs de las imágenes
+        const imagenes = [
+            'https://ejemplo.com/imagen1.jpg',
+            'https://ejemplo.com/imagen2.jpg',
+            'https://ejemplo.com/imagen3.jpg',
+            // Añade tantas URLs como necesites
+        ];
+
+        // Selecciona una imagen aleatoria
+        function mostrarImagenAleatoria() {
+            const indiceAleatorio = Math.floor(Math.random() * imagenes.length);
+            const imagenAleatoria = imagenes[indiceAleatorio];
+            document.getElementById('randomImage').src = imagenAleatoria;
+        }
+
+        // Llama a la función cuando se cargue la página
+        window.onload = mostrarImagenAleatoria;
+    </script>
+
+</body>
+</html>
